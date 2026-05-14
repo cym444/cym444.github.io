@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎧 沒去過音樂節，別說你懂自由！</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            black: '#050505',
+                            dark: '#0f0f1a',
+                            neon: '#00f2ff',
+                            purple: '#7000ff',
+                            pink: '#ff00c8',
+                            yellow: '#f3e600',
+                            glass: 'rgba(15, 15, 26, 0.7)'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'Noto Sans TC', 'sans-serif'],
+                        body: ['Noto Sans TC', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%': { 'text-shadow': '0 0 10px #00f2ff, 0 0 20px #00f2ff' },
+                            '100%': { 'text-shadow': '0 0 20px #ff00c8, 0 0 40px #ff00c8' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neo-gradient-text {
+            background: linear-gradient(90deg, #00f2ff, #7000ff, #ff00c8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cyber-border {
+            position: relative;
+        }
+        .cyber-border::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: #00f2ff;
+            box-shadow: 0 0 10px #00f2ff;
+        }
+        img {
+            filter: saturate(1.2) contrast(1.1);
+            transition: transform 0.5s ease;
+        }
+        img:hover {
+            transform: scale(1.02);
+        }
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 242, 255, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(0, 242, 255, 0.3);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7000ff;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="font-body leading-relaxed">
+
+    <!-- Header / Banner Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src='https://opal.google/board/blobs/0b82182b-d820-432f-a902-461e19fbc753' alt='Cyberpunk Music Festival' class="w-full h-full object-cover opacity-60" />
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-black/40 to-cyber-black"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-6 max-w-5xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-cyber-neon text-cyber-neon text-xs font-bold tracking-[0.3em] uppercase animate-pulse">
+                Escape Protocol: Initialized
+            </div>
+            <h1 class="font-display font-extrabold text-5xl md:text-8xl mb-6 tracking-tighter leading-none">
+                <span class="block text-white">沒去過音樂節</span>
+                <span class="neo-gradient-text animate-glow">別說你懂自由</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-300 font-light max-w-2xl mx-auto mb-8">
+                這不只是湊熱鬧聽聽歌，而是一場精心策劃的<span class="text-cyber-neon font-bold">「靈魂逃走計畫」</span>。
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-sm font-bold">
+                <span class="px-6 py-3 bg-cyber-purple text-white rounded-full tracking-widest uppercase hover:bg-cyber-pink transition-colors cursor-pointer">
+                    Start Your Escape
+                </span>
+                <span class="text-gray-400">學號：M11421006</span>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-cyber-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-20">
+        
+        <!-- Intro Section -->
+        <section class="mb-32">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7">
+                    <h2 class="font-display text-4xl font-bold mb-8 cyber-border pb-4">什麼是獨立音樂節？</h2>
+                    <p class="text-xl text-gray-400 mb-6 leading-relaxed">
+                        所謂「獨立」，核心就在於拒絕被定義。如果你受夠了廣播裡那些工業化生產、精準計算過的「罐頭音樂」，那獨立音樂節就是你的救贖。這裡的主辦人更像是品味刁鑽的策展人，讓音樂回歸最純粹的表達。
+                    </p>
+                    <div class="p-6 glass-morphism rounded-2xl border-l-4 border-cyber-pink italic text-gray-300">
+                        「音樂只是骨架，生活才是血肉。一場好的音樂節是音樂、創意市集、野外露營與隨機社交的綜合大補帖。」
+                    </div>
+                </div>
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                    <div class="space-y-4 pt-8">
+                        <div class="h-40 bg-cyber-purple/20 rounded-2xl flex items-center justify-center border border-cyber-purple/30 group hover:bg-cyber-purple/40 transition-all">
+                            <span class="text-cyber-neon font-bold">Hardcore</span>
+                        </div>
+                        <div class="h-60 bg-cyber-pink/20 rounded-2xl flex items-center justify-center border border-cyber-pink/30 group hover:bg-cyber-pink/40 transition-all">
+                            <span class="text-white font-bold">Urban Wanderer</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="h-60 bg-cyber-neon/20 rounded-2xl flex items-center justify-center border border-cyber-neon/30 group hover:bg-cyber-neon/40 transition-all">
+                            <span class="text-white font-bold">Nature Spirit</span>
+                        </div>
+                        <div class="h-40 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20 group hover:bg-white/30 transition-all">
+                            <span class="text-cyber-yellow font-bold">Hipster</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Archetypes (Bento Grid) -->
+        <section class="mb-32">
+            <h3 class="font-display text-2xl font-bold mb-12 text-center uppercase tracking-widest text-cyber-neon">靈魂屬性分類</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Hardcore -->
+                <div class="bento-card p-8 rounded-3xl glass-morphism flex flex-col h-full">
+                    <div class="mb-6 text-cyber-pink text-4xl">🤘</div>
+                    <h4 class="text-xl font-bold mb-4 text-white">硬派曲風愛好者</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">專為重金屬、電音或爵士而生。像是去台中的「山海屯搖滾祭」撞擊靈魂，這不是聽歌，是朝聖。</p>
+                </div>
+                <!-- City -->
+                <div class="bento-card p-8 rounded-3xl glass-morphism flex flex-col h-full md:mt-12">
+                    <div class="mb-6 text-cyber-neon text-4xl">🏙️</div>
+                    <h4 class="text-xl font-bold mb-4 text-white">城市漫遊者</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">典型的都市便利派。高雄「大港開唱」是首選，下午看完滅火器，晚上還能無痛吃火鍋。</p>
+                </div>
+                <!-- Nature -->
+                <div class="bento-card p-8 rounded-3xl glass-morphism flex flex-col h-full">
+                    <div class="mb-6 text-green-400 text-4xl">🏕️</div>
+                    <h4 class="text-xl font-bold mb-4 text-white">大自然系青年</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">帳篷就是你的家。Fuji Rock 或貢寮海祭，在那裡，人與土地的連結比 Wi-Fi 訊號還強。</p>
+                </div>
+                <!-- Hipster -->
+                <div class="bento-card p-8 rounded-3xl glass-morphism flex flex-col h-full md:mt-12">
+                    <div class="mb-6 text-cyber-yellow text-4xl">☕</div>
+                    <h4 class="text-xl font-bold mb-4 text-white">文青與家庭派</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">追求的是一種「鬆」。逛市集、喝手沖。呼吸一種名為「質感」的空氣。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Timeline -->
+        <section class="mb-32">
+            <h2 class="font-display text-4xl font-bold mb-16 text-center">派對從哪來？<span class="text-cyber-pink">前世今生</span></h2>
+            <div class="relative border-l-2 border-cyber-purple/30 ml-4 md:ml-0 md:left-1/2">
+                <!-- 1969 -->
+                <div class="mb-12 relative">
+                    <div class="md:absolute md:right-[calc(100%+2rem)] md:text-right top-0 md:w-64">
+                        <span class="text-cyber-neon font-bold text-2xl block mb-2">1969</span>
+                        <h4 class="text-white font-bold text-xl mb-2">Woodstock</h4>
+                        <p class="text-gray-400 text-sm">奠定了音樂節作為「文化烏托邦」的基調，用音樂宣揚和平。</p>
+                    </div>
+                    <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-cyber-neon shadow-[0_0_10px_#00f2ff]"></div>
+                </div>
+                <!-- 1995 -->
+                <div class="mb-12 relative">
+                    <div class="md:absolute md:left-[calc(100%+2rem)] top-0 md:w-64">
+                        <span class="text-cyber-pink font-bold text-2xl block mb-2">1995</span>
+                        <h4 class="text-white font-bold text-xl mb-2">春天吶喊</h4>
+                        <p class="text-gray-400 text-sm">台灣獨立音樂的起點，墾丁海邊的 DIY 熱血時代。</p>
+                    </div>
+                    <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-cyber-pink shadow-[0_0_10px_#ff00c8]"></div>
+                </div>
+                <!-- Modern -->
+                <div class="mb-12 relative">
+                    <div class="md:absolute md:right-[calc(100%+2rem)] md:text-right top-0 md:w-64">
+                        <span class="text-cyber-purple font-bold text-2xl block mb-2">NOW</span>
+                        <h4 class="text-white font-bold text-xl mb-2">大港開唱 & Coachella</h4>
+                        <p class="text-gray-400 text-sm">結合城市品牌與時尚，將獨立音樂推向大眾視野。</p>
+                    </div>
+                    <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-cyber-purple shadow-[0_0_10px_#7000ff]"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why the Hype? -->
+        <section class="mb-32 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <h2 class="font-display text-4xl font-bold mb-8 cyber-border pb-4">為什麼大家都在衝？</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 shrink-0 rounded-xl bg-cyber-neon/10 flex items-center justify-center text-cyber-neon font-bold">01</div>
+                        <div>
+                            <h4 class="text-white font-bold mb-1">城市的新名片</h4>
+                            <p class="text-gray-400 text-sm">地方創生的最佳工具，讓城市瞬間變年輕。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 shrink-0 rounded-xl bg-cyber-pink/10 flex items-center justify-center text-cyber-pink font-bold">02</div>
+                        <div>
+                            <h4 class="text-white font-bold mb-1">年輕人的真心話</h4>
+                            <p class="text-gray-400 text-sm">價值觀的縮影，是環保、平權與認同的立場宣告。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 shrink-0 rounded-xl bg-cyber-purple/10 flex items-center justify-center text-cyber-purple font-bold">03</div>
+                        <div>
+                            <h4 class="text-white font-bold mb-1">樂團的救命錢</h4>
+                            <p class="text-gray-400 text-sm">串流時代，Live 演出是支持樂團最實質的「投幣」。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-morphism rounded-3xl p-10 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 text-9xl font-black">?</div>
+                <h3 class="text-2xl font-bold mb-6 text-cyber-yellow">那些沒說的糾結...</h3>
+                <ul class="space-y-4 text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <span class="text-cyber-pink mt-1">●</span> 獨立精神是否在網紅打卡潮中稀釋？
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-cyber-pink mt-1">●</span> 狂歡後的垃圾山與土地債務。
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-cyber-pink mt-1">●</span> 票價飛漲帶來的「階級化消費」。
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Future Section -->
+        <section class="mb-32">
+            <h2 class="font-display text-4xl font-bold mb-12 text-center">未來的音樂祭，會變什麼樣子？</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 bg-gradient-to-br from-green-900/20 to-transparent border border-green-500/20 rounded-3xl">
+                    <h4 class="text-green-400 font-bold mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg> 綠色派對
+                    </h4>
+                    <p class="text-sm text-gray-400">零廢棄將成標配，電力可能來自參與者的腳踏車發電。</p>
+                </div>
+                <div class="p-8 bg-gradient-to-br from-cyber-neon/20 to-transparent border border-cyber-neon/20 rounded-3xl">
+                    <h4 class="text-cyber-neon font-bold mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg> 科技宅救星
+                    </h4>
+                    <p class="text-sm text-gray-400">AR/VR 沉浸式舞美，NFT 票券徹底解決黃牛問題。</p>
+                </div>
+                <div class="p-8 bg-gradient-to-br from-cyber-purple/20 to-transparent border border-cyber-purple/20 rounded-3xl">
+                    <h4 class="text-cyber-purple font-bold mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg> 音樂療癒系
+                    </h4>
+                    <p class="text-sm text-gray-400">現場不僅有衝撞，還會有瑜珈、冥想與聲頻療癒。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="mb-20 glass-morphism rounded-[3rem] p-8 md:p-16 border-2 border-cyber-neon/30 relative">
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 px-8 py-2 bg-cyber-neon text-cyber-black font-black uppercase tracking-tighter skew-x-[-12deg]">
+                Soul Test
+            </div>
+            
+            <h2 class="font-display text-4xl font-bold mb-4 text-center mt-4">你最適合哪種音樂節？</h2>
+            <p class="text-center text-gray-400 mb-12 italic">跟隨你的直覺，選擇心儀的選項</p>
+
+            <div class="space-y-12 max-w-3xl mx-auto">
+                <!-- Q1 -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-white flex gap-3">
+                        <span class="text-cyber-neon">Q1.</span> 週六下午，你最想出現在哪裡？
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <button onclick="recordVote('q1', 'A')" class="quiz-btn text-left p-4 rounded-xl border border-white/10 hover:border-cyber-neon hover:bg-cyber-neon/10 transition-all text-sm text-gray-300">A. 山林裡，沒有訊號的地方。</button>
+                        <button onclick="recordVote('q1', 'B')" class="quiz-btn text-left p-4 rounded-xl border border-white/10 hover:border-cyber-neon hover:bg-cyber-neon/10 transition-all text-sm text-gray-300">B. 捷運站附近的咖啡廳，等下要去吃大餐。</button>
+                        <button onclick="recordVote('q1', 'C')" class="quiz-btn text-left p-4 rounded-xl border border-white/10 hover:border-cyber-neon hover:bg-cyber-neon/10 transition-all text-sm text-gray-300">C. 健身房，揮灑汗水。</button>
+                        <button onclick="recordVote('q1', 'D')" class="quiz-btn text-left p-4 rounded-xl border border-white/10 hover:border-cyber-neon hover:bg-cyber-neon/10 transition-all text-sm text-gray-300">D. 家裡的陽台，看著植物發呆。</button>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-white flex gap-3">
+                        <span class="text-cyber-neon">Q2.</span> 參加活動時，你最在乎什麼？
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <button onclick="recordVote('q2', 'A')" class="quiz-btn text-left p-4 rounded-xl border border-white/10 hover:border-cyber-neon hover:bg-cyber-neon/10 transition-all text-sm text-gray-300">A. 能不能搭帳篷露營。</button>
+                        <button onclick="recordVote('q2', 'B')" class="quiz-btn text-left p-4 rounded-xl border border-white/10 hover:border-cyber-neon hover:bg-cyber-neon/10 transition-all text-sm text-gray-300">B. 拍照好不好看、交通方便嗎。</button>
+                        <button onclick="recordVote('q2', 'C')" class="quiz-btn text-left p-4 rounded-xl border border-white/10 hover:border-cyber-neon hover:bg-cyber-neon/10 transition-all text-sm text-gray-300">C. 音響效果跟表演陣容夠不夠重口味。</button>
+                        <button onclick="recordVote('q2', 'D')" class="quiz-btn text-left p-4 rounded-xl border border-white/10 hover:border-cyber-neon hover:bg-cyber-neon/10 transition-all text-sm text-gray-300">D. 現場有沒有好逛的市集跟好吃的。</button>
+                    </div>
+                </div>
+
+                <div id="result-display" class="hidden mt-12 p-8 rounded-3xl bg-cyber-purple/20 border border-cyber-purple/40 text-center animate-pulse">
+                    <h5 class="text-cyber-neon font-bold text-2xl mb-4" id="result-title"></h5>
+                    <p class="text-gray-300" id="result-desc"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="text-center py-20 relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-cyber-dark to-cyber-black border border-white/5">
+            <div class="relative z-10">
+                <h2 class="text-4xl font-bold mb-6">準備好逃走了嗎？</h2>
+                <p class="text-gray-400 max-w-xl mx-auto mb-10">
+                    今年，請務必給自己一個機會，走進那個由音牆築起的烏托邦。在那裡，沒有老闆、沒有帳單，只有你和音樂。
+                </p>
+                <button class="px-10 py-4 bg-white text-cyber-black font-black rounded-full hover:scale-110 transition-transform active:scale-95">
+                    立即探索音樂節
+                </button>
+            </div>
+            <!-- Decorative circle -->
+            <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-cyber-pink/20 blur-[100px] rounded-full"></div>
+            <div class="absolute -top-24 -left-24 w-64 h-64 bg-cyber-neon/20 blur-[100px] rounded-full"></div>
+        </section>
+
+    </main>
+
+    <script>
+        const votes = { q1: null, q2: null };
+        const results = {
+            'A': { title: '【大自然系青年】', desc: '你適合 Fuji Rock。去山裡淋場雨，你會發現靈魂都清醒了。' },
+            'B': { title: '【城市漫遊者】', desc: '你適合大港開唱。在港邊吹海風聽歌，晚上回家還能睡自己的床，完美。' },
+            'C': { title: '【硬派曲風愛好者】', desc: '你適合山海屯或專門的電音祭。去衝撞吧，那是你釋放壓力的唯一出口。' },
+            'D': { title: '【文青與家庭派】', desc: '你適合簡單生活節。買雙手作襪子，聽聽輕柔的民謠，這就是你要的自由。' }
+        };
+
+        function recordVote(q, val) {
+            votes[q] = val;
+            
+            // Highlight selected
+            const btns = event.target.parentElement.querySelectorAll('.quiz-btn');
+            btns.forEach(b => {
+                b.classList.remove('bg-cyber-neon/20', 'border-cyber-neon');
+                b.classList.add('border-white/10');
+            });
+            event.target.classList.add('bg-cyber-neon/20', 'border-cyber-neon');
+            event.target.classList.remove('border-white/10');
+
+            if (votes.q1 && votes.q2) {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const display = document.getElementById('result-display');
+            const title = document.getElementById('result-title');
+            const desc = document.getElementById('result-desc');
+            
+            // Simple logic: if q2 is chosen, it often defines the lifestyle more strongly
+            const finalVal = votes.q2;
+            
+            title.innerText = results[finalVal].title;
+            desc.innerText = results[finalVal].desc;
+            display.classList.remove('hidden');
+            display.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>
